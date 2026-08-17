@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOME HELPER RD — Soluciones para tu Hogar | Aires Acondicionados en RD</title>
+<meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados en República Dominicana. Servicio rápido, profesional y garantizado. Llama al (809) 370-5413.">
+<script>document.documentElement.className='js';</script>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 16"><rect width="14" height="14" x="0" y="1" rx="3" fill="%234C94C0"/><rect x="17" width="14" height="14" y="1" rx="3" fill="%23EFB33C"/><rect x="34" width="14" height="14" y="1" rx="3" fill="%2371A24C"/><rect x="51" width="14" height="14" y="1" rx="3" fill="%23CE403A"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS & BASE ============ */
+:root{
+  --navy-950:#05131F; --navy-900:#071B2C; --navy-800:#0A2136; --navy-700:#0E2C47;
+  --blue-700:#0B5E9C; --blue-600:#0E6FB8; --blue-500:#1284D4;
+  --cyan:#2FC3F2; --ice:#8FE3FF; --ice-soft:#D9F2FD; --frost:#EDF8FE;
+  --lg-blue:#4C94C0; --lg-yellow:#EFB33C; --lg-green:#71A24C; --lg-red:#CE403A;
+  --paper:#F6FBFE; --white:#FFFFFF;
+  --ink:#0B2237; --muted:#54718A; --hair:#D9EBF5;
+  --disp:'Sora',sans-serif; --body:'Manrope',sans-serif;
+  --r-card:18px; --r-btn:12px;
+  --sh-card:0 24px 50px -24px rgba(10,45,80,.22);
+  --ease:cubic-bezier(.22,.68,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{
+  font-family:var(--body);color:var(--ink);background:var(--paper);
+  overflow-x:hidden;line-height:1.65;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+::selection{background:rgba(47,195,242,.28)}
+section{position:relative}
+.wrap{width:min(1180px,92%);margin:0 auto;position:relative}
+.kicker{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font:700 .78rem/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--blue-600);
+}
+.kicker::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);border-radius:2px}
+.kicker.light{color:var(--ice)}
+.h2{font:700 clamp(1.9rem,4vw,3rem)/1.14 var(--disp);letter-spacing:-.02em;color:var(--navy-800);margin:.7rem 0 .9rem}
+.h2.light{color:#fff}
+.lead{color:var(--muted);max-width:56ch;font-size:1.05rem}
+.sec{padding:clamp(4.5rem,9vw,7.5rem) 0}
+em.fx{font-style:normal;color:var(--blue-500);position:relative;white-space:nowrap}
+em.fx::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.34em;background:linear-gradient(90deg,rgba(143,227,255,.5),rgba(47,195,242,.18));z-index:-1;border-radius:3px}
+
+/* reveals */
+.js .reveal{opacity:0;transform:translateY(30px);filter:blur(7px);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-l{transform:translateX(-36px)}
+.js .reveal-r{transform:translateX(36px)}
+.js .reveal.in{opacity:1;transform:none;filter:blur(0)}
+.js .lm{display:block;overflow:hidden}
+.js .lm>span{display:block;transform:translateY(112%);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .in .lm>span,.js .lm.in>span{transform:none}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.6rem;font:700 .95rem var(--disp);letter-spacing:.02em;padding:1rem 1.75rem;border-radius:var(--r-btn);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s;isolation:isolate;white-space:nowrap}
+.btn svg{width:17px;height:17px;transition:transform .35s var(--ease)}
+.btn-primary{background:var(--blue-600);color:#fff;box-shadow:0 14px 28px -12px rgba(14,111,184,.55)}
+.btn-primary:hover{background:var(--blue-500);transform:translateY(-3px);box-shadow:0 20px 34px -12px rgba(14,111,184,.6)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-22deg);transition:left .6s ease;z-index:1}
+.btn-primary:hover::after{left:130%}
+.btn-ghost{border:1.5px solid rgba(14,111,184,.35);color:var(--navy-800);background:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:var(--ice-soft);border-color:var(--cyan);transform:translateY(-3px)}
+.btn-xl{padding:1.25rem 2.6rem;font-size:1.05rem;border-radius:14px}
+
+/* ============ LOADER ============ */
+.loader{display:none}
+.js .loader{position:fixed;inset:0;z-index:300;display:grid;place-items:center;background:radial-gradient(90% 90% at 50% 20%,#0C2A44 0%,var(--navy-950) 70%);transition:clip-path .75s cubic-bezier(.7,0,.3,1);clip-path:inset(0 0 0 0)}
+.js .loader.done{clip-path:inset(0 0 100% 0);pointer-events:none}
+.loader-in{text-align:center;color:#fff}
+.loader-sq{width:min(210px,60vw);display:block;margin:0 auto 1.2rem;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
+.loader-brand{font:800 1.05rem var(--disp);letter-spacing:.22em}
+.loader-brand b{color:var(--ice)}
+.loader-temp{font:700 3rem var(--disp);color:var(--ice);margin:.9rem 0 .3rem;font-variant-numeric:tabular-nums;text-shadow:0 0 26px rgba(143,227,255,.5)}
+.loader-bar{width:190px;height:3px;margin:0 auto;background:rgba(255,255,255,.14);border-radius:3px;overflow:hidden}
+.loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue-500),var(--ice));border-radius:3px}
+.loader-txt{margin-top:.9rem;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ============ HEADER ============ */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:120;transition:background .4s,box-shadow .4s,padding .4s}
+.nav-in{width:min(1240px,94%);margin:0 auto;display:flex;align-items:center;gap:2rem;padding:1.05rem 0;transition:padding .4s}
+.site-header.scrolled{background:rgba(255,255,255,.94);box-shadow:0 10px 30px -18px rgba(10,45,80,.28);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.site-header.scrolled .nav-in{padding:.65rem 0}
+.brand{display:flex;align-items:center;gap:.85rem}
+.brand-sq{width:76px;height:auto;flex:none;filter:drop-shadow(0 4px 8px rgba(10,45,80,.18))}
+.brand-txt{font:800 1.02rem var(--disp);letter-spacing:.03em;color:var(--navy-800);line-height:1.1}
+.brand-txt small{display:block;font:800 .53rem var(--body);letter-spacing:.26em;color:var(--blue-600);margin-top:2px}
+.nav-links{display:flex;gap:1.9rem;margin-left:auto}
+.nav-links a{font:600 .92rem var(--body);color:var(--navy-700);position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--cyan);border-radius:2px;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{padding:.72rem 1.3rem;font-size:.85rem}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:.5rem;margin-left:auto}
+.nav-toggle span{width:24px;height:2.5px;background:var(--navy-800);border-radius:2px;transition:.35s var(--ease)}
+.mobile-panel{display:none}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 60px;background:
+  radial-gradient(60% 55% at 82% 30%,rgba(143,227,255,.20),transparent 70%),
+  linear-gradient(180deg,#FBFEFF 0%,var(--paper) 60%,#EAF6FD 100%);
+  overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(14,111,184,.10) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(70% 60% at 70% 40%,#000 0%,transparent 100%);opacity:.5;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:2.5rem;align-items:center}
+.hero-chip{display:inline-flex;align-items:center;gap:.55rem;background:#fff;border:1px solid var(--hair);border-radius:100px;padding:.5rem 1.05rem;font:700 .78rem var(--body);color:var(--navy-700);box-shadow:0 8px 20px -12px rgba(10,45,80,.25)}
+.hero-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(47,195,242,.18);animation:pulseDot 2.2s ease-in-out infinite}
+@keyframes pulseDot{50%{box-shadow:0 0 0 7px rgba(47,195,242,.08)}}
+.hero h1{font:800 clamp(2.5rem,5.4vw,4.3rem)/1.06 var(--disp);letter-spacing:-.025em;color:var(--navy-800);margin:1.4rem 0 1.2rem}
+.hero-sub{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);max-width:46ch;margin-bottom:2.1rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-trust{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.5rem;border-top:1px solid var(--hair)}
+.hero-trust li{display:flex;align-items:center;gap:.5rem;font:600 .84rem var(--body);color:var(--navy-700)}
+.hero-trust svg{width:16px;height:16px;color:var(--blue-500);flex:none}
+
+.hero-visual{position:relative;min-height:470px;display:grid;place-items:center}
+.hero-glow{position:absolute;width:min(560px,100%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(120,205,250,.32) 0%,rgba(120,205,250,0) 66%);pointer-events:none}
+.hero-lines{position:absolute;inset:auto -6% -4% -6%;width:112%;opacity:.75;pointer-events:none}
+.hero-lines path{stroke:#BFE4F6;stroke-width:1.6;fill:none;stroke-dasharray:10 16;animation:dashDrift 20s linear infinite}
+.hero-lines path:nth-child(2){animation-duration:26s;opacity:.7}
+.hero-lines path:nth-child(3){animation-duration:32s;opacity:.5}
+@keyframes dashDrift{to{stroke-dashoffset:-520}}
+
+/* AC unit (CSS built) */
+.ac{position:relative;z-index:2;width:min(450px,92%)}
+.ac-big{width:min(660px,94%)}
+.ac-body{position:relative;background:linear-gradient(180deg,#ffffff 0%,#f4fafe 52%,#ddedf7 100%);border-radius:22px 22px 34px 34px;padding:20px 26px 0;box-shadow:0 36px 70px -26px rgba(9,42,74,.4),0 6px 18px rgba(9,42,74,.10),inset 0 -4px 10px rgba(13,58,95,.10),inset 0 2px 0 #fff}
+.ac-hero .ac-body{height:152px}
+.ac-big .ac-body{height:212px;padding:26px 34px 0}
+.ac-sheen{position:absolute;top:9px;left:8%;right:8%;height:9px;border-radius:8px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent)}
+.ac-brandtag{position:absolute;left:26px;top:34px;font:700 .58rem var(--disp);letter-spacing:.34em;color:#9DB8CB}
+.ac-big .ac-brandtag{top:44px;font-size:.66rem}
+.ac-display{position:absolute;right:24px;top:26px;display:flex;align-items:baseline;gap:.3rem;background:var(--navy-900);border-radius:9px;padding:.42rem .8rem;box-shadow:inset 0 2px 6px rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.7)}
+.ac-display b{font:700 1.15rem var(--disp);color:var(--ice);text-shadow:0 0 14px rgba(143,227,255,.75);font-variant-numeric:tabular-nums}
+.ac-display i{font:600 .6rem var(--disp);color:rgba(143,227,255,.7);font-style:normal}
+.ac-display u{width:6px;height:6px;border-radius:50%;background:var(--cyan);align-self:center;animation:ledBlink 2.4s ease-in-out infinite;text-decoration:none;margin-left:.3rem}
+@keyframes ledBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.ac-grille{position:absolute;left:26px;right:26px;bottom:44px;display:grid;gap:5px}
+.ac-big .ac-grille{bottom:60px}
+.ac-grille i{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#C6DCEA 12%,#C6DCEA 88%,transparent)}
+.ac-vent{position:absolute;left:0;right:0;bottom:0;height:30px;border-radius:0 0 34px 34px;background:linear-gradient(180deg,#123049,#0A2136);box-shadow:inset 0 4px 8px rgba(0,0,0,.5);perspective:340px;overflow:hidden}
+.ac-big .ac-vent{height:38px}
+.ac-flap{position:absolute;left:4%;right:4%;top:5px;height:11px;border-radius:6px;background:linear-gradient(180deg,#FDFEFF,#CBDFEC);box-shadow:0 3px 6px rgba(0,0,0,.35);transform-origin:top center;transform:rotateX(26deg);animation:flapIdle 5s ease-in-out infinite}
+.ac-big .ac-flap{top:7px;height:14px;animation:none;transform:rotateX(12deg)}
+@keyframes flapIdle{0%,100%{transform:rotateX(22deg)}50%{transform:rotateX(38deg)}}
+.ac-shadow{width:74%;height:26px;margin:26px auto 0;border-radius:50%;background:radial-gradient(ellipse,rgba(9,42,74,.30),transparent 68%);filter:blur(6px)}
+.hero-air,.cz-air{position:absolute;inset:-12% -8%;z-index:3;pointer-events:none}
+.float-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:.55rem;background:#fff;border:1px solid var(--hair);border-radius:13px;padding:.65rem 1rem;font:700 .8rem var(--body);color:var(--navy-800);box-shadow:var(--sh-card);animation:floatY 6s ease-in-out infinite}
+.float-chip svg{width:17px;height:17px;color:var(--blue-500)}
+.fc-1{top:8%;left:0}
+.fc-2{bottom:12%;right:-2%;animation-delay:-3s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font:700 .68rem var(--disp);letter-spacing:.28em;text-transform:uppercase}
+.scroll-cue i{width:1.5px;height:44px;background:linear-gradient(180deg,var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;top:-10px;left:0;width:100%;height:10px;background:var(--blue-500);animation:cueDrop 1.8s var(--ease) infinite}
+@keyframes cueDrop{to{top:54px}}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--navy-900);border-top:1px solid rgba(143,227,255,.15);border-bottom:1px solid rgba(143,227,255,.15);overflow:hidden;padding:1rem 0;position:relative}
+.marquee-track{display:flex;gap:3rem;width:max-content;animation:mq 30s linear infinite}
+.marquee span{display:flex;align-items:center;gap:3rem;font:700 .92rem var(--disp);letter-spacing:.14em;color:#BFE4F6;text-transform:uppercase;white-space:nowrap}
+.marquee b{color:var(--cyan);font-weight:800}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ SERVICIOS ============ */
+.services{background:linear-gradient(180deg,#EAF6FD 0%,var(--paper) 26%);overflow:hidden}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:clamp(2.4rem,5vw,3.6rem);flex-wrap:wrap}
+.services-wrap{position:relative}
+.services-gust{position:absolute;inset:-14% -34%;pointer-events:none;z-index:5;opacity:0;background:linear-gradient(90deg,transparent 30%,rgba(200,240,255,.0) 40%,rgba(190,238,255,.85) 50%,rgba(255,255,255,.35) 55%,transparent 68%);filter:blur(9px);transform:translateX(-30%) skewX(-16deg)}
+.services.gusted .services-gust{animation:gustSweep 1.5s cubic-bezier(.55,.08,.3,1) forwards}
+@keyframes gustSweep{0%{opacity:0;transform:translateX(-34%) skewX(-16deg)}12%{opacity:1}100%{opacity:0;transform:translateX(125%) skewX(-16deg)}}
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.4rem}
+.service-card{position:relative;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:2rem 1.9rem 1.7rem;box-shadow:0 14px 34px -24px rgba(10,45,80,.25);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;overflow:hidden}
+.js .services:not(.gusted) .service-card{opacity:0;transform:translateY(42px);filter:blur(8px)}
+.js .services.gusted .service-card{opacity:1;transform:none;filter:blur(0);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease),box-shadow .5s,border-color .5s}
+.services.gusted .service-card:nth-child(1){transition-delay:.18s,0s,0s,0s,0s}
+.services.gusted .service-card:nth-child(2){transition-delay:.44s,.44s,.44s,0s,0s}
+.services.gusted .service-card:nth-child(3){transition-delay:.5s,.5s,.5s,0s,0s}
+.services.gusted .service-card:nth-child(4){transition-delay:.8s,.8s,.8s,0s,0s}
+.sc-1{grid-column:span 7}.sc-2{grid-column:span 5}.sc-3{grid-column:span 5}.sc-4{grid-column:span 7}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--blue-500));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.service-card:hover{transform:translateY(-7px);border-color:rgba(47,195,242,.5);box-shadow:0 30px 55px -24px rgba(14,111,184,.4)}
+.service-card:hover::before{transform:scaleX(1)}
+.sc-num{position:absolute;top:1.4rem;right:1.6rem;font:800 .8rem var(--disp);color:#C3DCEC;letter-spacing:.1em}
+.svc-icon{position:relative;width:58px;height:58px;border-radius:16px;background:linear-gradient(150deg,#EDF9FF,#D2EDFB);display:grid;place-items:center;color:var(--blue-600);margin-bottom:1.25rem}
+.svc-icon svg{width:27px;height:27px;position:relative;z-index:2;transition:transform .45s var(--ease)}
+.service-card:hover .svc-icon svg{transform:translateY(-2px) scale(1.06)}
+.svc-icon::before{content:"";position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle,rgba(143,227,255,.6) 0%,rgba(143,227,255,0) 70%);opacity:0;transform:scale(.55);filter:blur(7px);transition:.5s var(--ease)}
+.service-card:hover .svc-icon::before{opacity:1;transform:scale(1)}
+.svc-icon .p{position:absolute;width:5px;height:5px;border-radius:50%;background:#BDEEFF;opacity:0;z-index:3}
+.p1{left:14px;top:6px}.p2{left:30px;top:2px}.p3{left:44px;top:8px}
+.service-card:hover .p{animation:puff 1.3s ease-out infinite}
+.service-card:hover .p2{animation-delay:.35s}
+.service-card:hover .p3{animation-delay:.7s}
+@keyframes puff{0%{opacity:0;transform:translateY(6px) scale(.5)}25%{opacity:.95}100%{opacity:0;transform:translateY(-26px) scale(1.25)}}
+.service-card h3{font:700 1.22rem var(--disp);color:var(--navy-800);margin-bottom:.5rem;letter-spacing:-.01em}
+.service-card>p{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem}
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:.45rem .9rem;margin-bottom:1.2rem}
+.svc-list li{display:flex;gap:.45rem;align-items:center;font:600 .82rem var(--body);color:var(--navy-700)}
+.svc-list svg{width:13px;height:13px;color:var(--cyan);flex:none}
+.svc-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.svc-tags span{font:700 .72rem var(--body);color:var(--blue-600);background:var(--frost);border:1px solid var(--ice-soft);padding:.32rem .7rem;border-radius:100px}
+.svc-link{display:inline-flex;align-items:center;gap:.45rem;font:700 .88rem var(--disp);color:var(--blue-600);margin-top:auto}
+.svc-link svg{width:15px;height:15px;transition:transform .35s var(--ease)}
+.svc-link:hover svg{transform:translateX(5px)}
+.svc-link:hover{color:var(--blue-500)}
+.service-card{display:flex;flex-direction:column}
+
+/* ============ STATS ============ */
+.stats{background:linear-gradient(120deg,var(--navy-900),var(--navy-700));padding:3.2rem 0;overflow:hidden}
+.stats::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(143,227,255,.14) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);opacity:.5}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;position:relative}
+.stat b{display:block;font:800 clamp(2rem,3.6vw,2.9rem) var(--disp);color:#fff;font-variant-numeric:tabular-nums}
+.stat b .c-accent{color:var(--ice)}
+.stat span{font:600 .82rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:#8FB4CE}
+.stat+.stat{border-left:1px solid rgba(143,227,255,.14)}
+
+/* ============ POR QUÉ ============ */
+.why{background:var(--paper)}
+.why-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.why-media{position:relative}
+.why-img{border-radius:22px;overflow:hidden;box-shadow:var(--sh-card)}
+.why-img img{width:100%;height:520px;object-fit:cover;will-change:transform}
+.why-badge{position:absolute;right:-18px;bottom:34px;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:1rem 1.3rem;box-shadow:var(--sh-card);display:flex;gap:.9rem;align-items:center}
+.why-badge .wb-ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,var(--blue-600),var(--cyan));display:grid;place-items:center;color:#fff;flex:none}
+.why-badge .wb-ic svg{width:22px;height:22px}
+.why-badge b{font:800 1.15rem var(--disp);color:var(--navy-800);display:block;line-height:1.1}
+.why-badge span{font:600 .76rem var(--body);color:var(--muted)}
+.adv-list{display:grid;gap:1.1rem;margin-top:2rem}
+.adv{display:flex;gap:1.15rem;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:1.3rem 1.4rem;transition:transform .45s var(--ease),box-shadow .45s,border-color .45s;position:relative;overflow:hidden}
+.adv::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cyan),var(--blue-500));transform:scaleY(0);transition:transform .45s var(--ease);transform-origin:bottom}
+.adv:hover{transform:translateX(8px);border-color:rgba(47,195,242,.45);box-shadow:0 18px 36px -22px rgba(14,111,184,.35)}
+.adv:hover::before{transform:scaleY(1)}
+.adv-ic{width:48px;height:48px;flex:none;border-radius:13px;background:var(--frost);display:grid;place-items:center;color:var(--blue-600);transition:.45s var(--ease)}
+.adv:hover .adv-ic{background:linear-gradient(150deg,var(--blue-600),var(--cyan));color:#fff;transform:rotate(-6deg) scale(1.05)}
+.adv-ic svg{width:23px;height:23px}
+.adv h3{font:700 1.05rem var(--disp);color:var(--navy-800);margin-bottom:.2rem}
+.adv p{font-size:.9rem;color:var(--muted)}
+
+/* testimonials */
+.testi{margin-top:clamp(3.5rem,7vw,5.5rem)}
+.testi-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1.4rem}
+.testi-hint{font:700 .75rem var(--disp);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.testi-row{display:flex;gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .2rem 1.2rem;scrollbar-width:none}
+.testi-row::-webkit-scrollbar{display:none}
+.t-card{flex:0 0 340px;scroll-snap-align:start;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:1.7rem;box-shadow:0 14px 32px -24px rgba(10,45,80,.28);transition:transform .45s var(--ease),box-shadow .45s}
+.t-card:hover{transform:translateY(-5px);box-shadow:0 26px 44px -24px rgba(14,111,184,.35)}
+.t-stars{color:var(--cyan);letter-spacing:.15em;font-size:.85rem;margin-bottom:.8rem}
+.t-card p{font-size:.94rem;color:var(--navy-700);margin-bottom:1.2rem}
+.t-who{display:flex;align-items:center;gap:.8rem}
+.t-who img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--ice-soft)}
+.t-who b{font:700 .9rem var(--disp);color:var(--navy-800);display:block;line-height:1.2}
+.t-who span{font:600 .76rem var(--body);color:var(--muted)}
+
+/* ============ COOL ZONE ============ */
+.cool{height:230vh;background:linear-gradient(180deg,var(--paper) 0%,#E4F3FC 30%,#D8EEFB 70%,var(--paper) 100%)}
+.cool-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 5%}
+.cool-kicker{margin-bottom:1rem}
+.cool-title{font:800 clamp(1.7rem,3.8vw,2.9rem)/1.2 var(--disp);color:var(--navy-800);letter-spacing:-.02em;max-width:22ch}
+.cool-title em{font-style:normal;color:var(--blue-500)}
+.cool-stage{position:relative;margin-top:2.2rem;width:100%;display:grid;place-items:center}
+.cz-read{position:absolute;top:-8px;right:6%;z-index:6;background:var(--navy-900);color:var(--ice);font:700 .72rem var(--disp);letter-spacing:.14em;padding:.6rem 1rem;border-radius:9px;box-shadow:0 12px 26px -12px rgba(7,27,44,.6);opacity:0;transition:opacity .6s}
+.cool-sticky.on .cz-read{opacity:1}
+.cz-mist{position:absolute;left:50%;top:62%;width:min(480px,90%);height:360px;transform:translateX(-50%);background:radial-gradient(50% 60% at 50% 0%,rgba(160,225,255,.55),rgba(160,225,255,0) 72%);filter:blur(16px);opacity:0;pointer-events:none;z-index:1}
+.cool-hint{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);font:700 .72rem var(--disp);letter-spacing:.3em;text-transform:uppercase;color:var(--blue-600);display:flex;align-items:center;gap:.7rem;transition:opacity .5s}
+.cool-hint i{width:1.5px;height:34px;background:linear-gradient(180deg,var(--cyan),transparent);display:block}
+
+/* flow connector */
+.flow-in{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:.5rem}
+.flow-line{width:2px;height:96px;background:repeating-linear-gradient(180deg,var(--cyan) 0 9px,transparent 9px 18px);animation:flowDash .9s linear infinite;opacity:.75;border-radius:2px}
+@keyframes flowDash{to{background-position:0 18px}}
+
+/* ============ PROCESO ============ */
+.process{background:var(--paper);overflow:hidden}
+.steps{position:relative;margin-top:clamp(2.5rem,5vw,4rem)}
+.steps-path{position:absolute;left:50%;top:0;bottom:0;width:130px;transform:translateX(-50%);pointer-events:none}
+.steps-path .base{stroke:#CBE4F2;stroke-width:2;fill:none;stroke-dasharray:4 10}
+.steps-path .flow{stroke:var(--cyan);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:0 1;filter:drop-shadow(0 0 6px rgba(47,195,242,.7))}
+.step{display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;margin-bottom:clamp(2.6rem,5vw,4rem)}
+.step-badge{grid-column:2;justify-self:center;width:60px;height:60px;border-radius:50%;background:#fff;border:2px solid var(--ice);display:grid;place-items:center;font:800 1.2rem var(--disp);color:var(--blue-600);box-shadow:0 10px 26px -10px rgba(14,111,184,.4),0 0 0 8px rgba(143,227,255,.16);position:relative;z-index:2;transition:transform .5s var(--ease)}
+.step:hover .step-badge{transform:scale(1.12);border-color:var(--cyan)}
+.step-body{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:1.6rem 1.8rem;box-shadow:0 14px 34px -26px rgba(10,45,80,.3);max-width:420px;transition:transform .45s var(--ease),box-shadow .45s}
+.step-body:hover{transform:translateY(-4px);box-shadow:0 26px 44px -24px rgba(14,111,184,.35)}
+.step-body h3{font:700 1.12rem var(--disp);color:var(--navy-800);margin-bottom:.35rem}
+.step-body p{font-size:.92rem;color:var(--muted)}
+.step-tag{display:inline-block;font:800 .64rem var(--disp);letter-spacing:.22em;color:var(--cyan);margin-bottom:.45rem}
+.step:nth-child(odd) .step-body{grid-column:1;grid-row:1;justify-self:end;text-align:right}
+.step:nth-child(even) .step-body{grid-column:3;grid-row:1;justify-self:start}
+
+/* ============ CTA ============ */
+.cta{background:radial-gradient(90% 100% at 50% 0%,#0D3050 0%,var(--navy-950) 72%);padding:clamp(6rem,11vw,9rem) 0;overflow:hidden;text-align:center}
+.cta-air{position:absolute;inset:0;pointer-events:none}
+.cta-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.4;pointer-events:none}
+.cta-lines path{stroke:rgba(143,227,255,.35);stroke-width:1.4;fill:none;stroke-dasharray:8 18;animation:dashDrift 26s linear infinite}
+.cta h2{font:800 clamp(2.1rem,5vw,3.7rem)/1.12 var(--disp);color:#fff;letter-spacing:-.02em;max-width:20ch;margin:1.1rem auto .8rem}
+.cta .sub{font:600 clamp(1.05rem,1.8vw,1.35rem) var(--body);color:var(--ice);margin-bottom:2.6rem}
+.cta-note{margin-top:1.6rem;font:600 .84rem var(--body);color:#7FA3BE}
+.btn-cta{background:#fff;color:var(--navy-900);box-shadow:0 0 0 0 rgba(143,227,255,.0),0 22px 46px -16px rgba(0,0,0,.6);position:relative}
+.btn-cta::before{content:"";position:absolute;inset:-3px;border-radius:16px;background:conic-gradient(from var(--a,0deg),var(--cyan),var(--blue-500),var(--ice),var(--cyan));z-index:-1;opacity:.9;animation:spinBorder 4s linear infinite;filter:blur(1px)}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spinBorder{to{--a:360deg}}
+.btn-cta:hover{transform:translateY(-4px) scale(1.03);background:var(--frost)}
+.btn-cta:hover svg{transform:translateX(5px)}
+
+/* ============ CONTACTO ============ */
+.contact{background:linear-gradient(180deg,var(--paper),#EAF6FD)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.c-info-list{display:grid;gap:1rem;margin:2rem 0}
+.c-info{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--hair);border-radius:14px;padding:1.1rem 1.2rem;transition:transform .4s var(--ease),border-color .4s}
+.c-info:hover{transform:translateX(6px);border-color:rgba(47,195,242,.5)}
+.c-info .ci-ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--frost);display:grid;place-items:center;color:var(--blue-600)}
+.c-info .ci-ic svg{width:21px;height:21px}
+.c-info b{font:700 .95rem var(--disp);color:var(--navy-800);display:block}
+.c-info span{font:500 .85rem var(--body);color:var(--muted)}
+.c-map{border-radius:18px;overflow:hidden;box-shadow:var(--sh-card);position:relative}
+.c-map img{width:100%;height:210px;object-fit:cover}
+.c-map figcaption{position:absolute;left:12px;bottom:12px;background:rgba(7,27,44,.82);color:#DFF3FD;font:700 .72rem var(--disp);letter-spacing:.1em;padding:.5rem .9rem;border-radius:9px}
+.form-card{background:#fff;border:1px solid var(--hair);border-radius:22px;padding:clamp(1.8rem,4vw,2.8rem);box-shadow:var(--sh-card);position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--cyan),var(--ice))}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+.field label{font:700 .78rem var(--disp);letter-spacing:.08em;color:var(--navy-700);text-transform:uppercase}
+.field input,.field select,.field textarea{font:500 .95rem var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--hair);border-radius:11px;padding:.85rem 1rem;transition:border-color .3s,box-shadow .3s,background .3s;width:100%;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230E6FB8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cyan);background:#fff;box-shadow:0 0 0 4px rgba(47,195,242,.16)}
+.form-submit{grid-column:1/-1;justify-content:center;margin-top:.4rem}
+.form-ok{display:none;text-align:center;padding:2.5rem 1rem}
+.form-card.sent form{display:none}
+.form-card.sent .form-ok{display:block;animation:okIn .7s var(--ease)}
+@keyframes okIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+.ok-ic{width:76px;height:76px;margin:0 auto 1.3rem;border-radius:50%;background:linear-gradient(150deg,var(--blue-600),var(--cyan));display:grid;place-items:center;box-shadow:0 16px 36px -12px rgba(14,111,184,.55)}
+.ok-ic svg{width:36px;height:36px;color:#fff;stroke-dasharray:60;stroke-dashoffset:60;animation:drawCheck .8s .25s var(--ease) forwards}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+.form-ok h3{font:800 1.5rem var(--disp);color:var(--navy-800);margin-bottom:.5rem}
+.form-ok p{color:var(--muted);margin-bottom:1.6rem}
+.btn-wa{background:#1FAF57;color:#fff;box-shadow:0 14px 28px -12px rgba(31,175,87,.55)}
+.btn-wa:hover{background:#23c262;transform:translateY(-3px)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--navy-950);color:#9FBDD3;padding:4rem 0 0;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;top:-70px;left:50%;transform:translateX(-50%);width:640px;height:140px;background:radial-gradient(ellipse,rgba(47,195,242,.14),transparent 70%);pointer-events:none}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:2.5rem;padding-bottom:3rem}
+.f-logo{width:225px;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+.f-tag{margin:1rem 0 1.4rem;font-size:.92rem;max-width:32ch}
+.f-social{display:flex;gap:.8rem}
+.f-social a{width:42px;height:42px;border-radius:12px;border:1px solid rgba(143,227,255,.22);display:grid;place-items:center;color:var(--ice);transition:.35s var(--ease)}
+.f-social a:hover{background:var(--blue-600);border-color:var(--blue-600);color:#fff;transform:translateY(-4px)}
+.f-social svg{width:18px;height:18px}
+.f-col h4{font:700 .8rem var(--disp);letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:1.1rem}
+.f-col li{margin-bottom:.65rem}
+.f-col a{font-size:.92rem;transition:color .3s,padding-left .3s}
+.f-col a:hover{color:var(--ice);padding-left:6px}
+.f-bar{border-top:1px solid rgba(143,227,255,.12);padding:1.4rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:#6E8FA8}
+.f-bar b{color:var(--ice)}
+
+/* ============ FLOATING / OVERLAYS ============ */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:130;width:58px;height:58px;border-radius:50%;background:#1FAF57;display:grid;place-items:center;color:#fff;box-shadow:0 16px 34px -10px rgba(31,175,87,.6);transition:transform .35s var(--ease);animation:waIn .8s 1.8s var(--ease) backwards}
+.wa-float:hover{transform:scale(1.12) rotate(6deg)}
+.wa-float svg{width:28px;height:28px}
+.wa-float::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(31,175,87,.5);animation:waPulse 2.4s ease-out infinite}
+@keyframes waPulse{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.5);opacity:0}}
+@keyframes waIn{from{opacity:0;transform:translateY(30px) scale(.6)}}
+.wa-tip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:#fff;color:var(--navy-800);font:700 .78rem var(--body);padding:.5rem .9rem;border-radius:10px;white-space:nowrap;box-shadow:var(--sh-card);opacity:0;pointer-events:none;transition:opacity .3s}
+.wa-float:hover .wa-tip{opacity:1}
+#windLayer{position:fixed;inset:0;pointer-events:none;z-index:44;overflow:hidden}
+.windpass{position:fixed;left:-60vw;width:58vw;height:120px;pointer-events:none;transform:skewY(-5deg);background:linear-gradient(90deg,transparent,rgba(200,240,255,.05) 15%,rgba(190,238,255,.4) 45%,rgba(255,255,255,.22) 58%,transparent 82%);filter:blur(8px);animation:wp 1.3s cubic-bezier(.5,.05,.3,1) forwards}
+.windpass::before{content:"";position:absolute;left:8%;right:22%;top:50%;height:2px;background:linear-gradient(90deg,transparent,rgba(220,246,255,.85),transparent)}
+@keyframes wp{0%{transform:skewY(-5deg) translateX(0);opacity:0}10%{opacity:1}100%{transform:skewY(-5deg) translateX(235vw);opacity:0}}
+#frost{position:fixed;inset:0;z-index:46;pointer-events:none}
+#vignette{position:fixed;inset:0;z-index:42;pointer-events:none;background:radial-gradient(120% 95% at 50% 8%,transparent 55%,rgba(130,195,235,.22)),linear-gradient(180deg,rgba(190,230,250,.12),transparent 26%);opacity:.35;transition:opacity .4s}
+#noise{position:fixed;inset:0;z-index:47;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:3.5rem}
+  .hero{padding-top:110px;text-align:left}
+  .hero-visual{min-height:400px}
+  .why-grid,.contact-grid{grid-template-columns:1fr}
+  .why-img img{height:400px}
+  .stats-row{grid-template-columns:1fr 1fr;gap:2.2rem 0}
+  .stat:nth-child(3){border-left:none}
+  .sc-1,.sc-2,.sc-3,.sc-4{grid-column:span 12}
+  .svc-list{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+  .mobile-panel{display:block;position:fixed;top:64px;left:0;right:0;z-index:119;background:#fff;border-bottom:1px solid var(--hair);box-shadow:0 24px 40px -24px rgba(10,45,80,.35);padding:1.2rem 5% 1.6rem;transform:translateY(-130%);transition:transform .5s var(--ease)}
+  body.menu-open .mobile-panel{transform:none}
+  .mobile-panel a{display:block;padding:.85rem 0;font:700 1.02rem var(--disp);color:var(--navy-800);border-bottom:1px solid var(--frost)}
+  .mobile-panel .btn{margin-top:1.1rem;width:100%;justify-content:center}
+  body.menu-open .nav-toggle span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.menu-open .nav-toggle span:nth-child(2){opacity:0}
+  body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .steps-path{left:30px;transform:none;width:70px}
+  .step{grid-template-columns:60px 1fr;margin-bottom:2.2rem}
+  .step-badge{grid-column:1;width:50px;height:50px;font-size:1rem}
+  .step:nth-child(odd) .step-body,.step:nth-child(even) .step-body{grid-column:2;grid-row:1;justify-self:start;text-align:left;margin-left:1rem}
+  .form-grid{grid-template-columns:1fr}
+  .scroll-cue{display:none}
+  .fc-1{top:2%}
+  .cz-read{right:2%;font-size:.62rem}
+  .brand-sq{width:58px}
+  .brand-txt{font-size:.9rem}
+}
+@media(max-width:560px){
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat span{font-size:.7rem}
+  .t-card{flex-basis:280px}
+  .f-grid{grid-template-columns:1fr}
+  .why-badge{right:8px;bottom:16px;padding:.8rem 1rem}
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .js .reveal,.js .lm>span,.js .services:not(.gusted) .service-card{opacity:1;transform:none;filter:none}
+  .windpass,.scroll-cue{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SÍMBOLOS DEL LOGO (vectorial, sin archivos externos) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="hh-squares">
+      <rect x="0" y="0" width="62" height="62" rx="12" fill="#4C94C0"/>
+      <rect x="74" y="0" width="62" height="62" rx="12" fill="#EFB33C"/>
+      <rect x="148" y="0" width="62" height="62" rx="12" fill="#71A24C"/>
+      <rect x="222" y="0" width="62" height="62" rx="12" fill="#CE403A"/>
+      <rect x="10" y="15" width="42" height="16" rx="3.5" fill="#fff"/>
+      <rect x="41" y="21" width="7" height="2.4" rx="1.2" fill="#4C94C0"/>
+      <path d="M19 37 q3.2 4 0 8 q-3.2 4 0 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M30 37 q3.2 4 0 8 q-3.2 4 0 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M41 37 q3.2 4 0 8 q-3.2 4 0 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <rect x="94" y="11" width="5.5" height="13" rx="2.5" fill="#fff"/>
+      <rect x="107" y="11" width="5.5" height="13" rx="2.5" fill="#fff"/>
+      <path d="M90 26 h27 v5 a13.5 13.5 0 0 1 -27 0 z" fill="#fff"/>
+      <rect x="101" y="45" width="5" height="10" rx="2.5" fill="#fff"/>
+      <rect x="158" y="11" width="34" height="10" rx="5" fill="#fff"/>
+      <path d="M192 16 h5 v13 h-13 v5" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+      <rect x="181" y="34" width="6.5" height="16" rx="3" fill="#fff"/>
+      <rect x="157" y="38" width="17" height="14" rx="2.5" fill="none" stroke="#fff" stroke-width="2.6"/>
+      <path d="M158 40 a7.5 6 0 0 1 15 0" fill="none" stroke="#fff" stroke-width="2.2"/>
+      <rect x="234" y="11" width="27" height="10" rx="3.5" fill="#fff"/>
+      <rect x="244.5" y="21" width="7" height="28" rx="3" fill="#fff"/>
+      <path d="M232 33 l-4 14" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M239 35 l-2 14" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="232.6" cy="32" r="2" fill="#fff"/>
+      <circle cx="239.4" cy="34" r="2" fill="#fff"/>
+    </g>
+    <g id="hh-house">
+      <rect x="216" y="18" width="22" height="42" fill="#33383D"/>
+      <path d="M2 88 L140 4 L278 88" stroke="#33383D" stroke-width="12" fill="none"/>
+      <rect x="121" y="42" width="17" height="17" fill="#33383D"/>
+      <rect x="142" y="42" width="17" height="17" fill="#33383D"/>
+      <rect x="121" y="63" width="17" height="17" fill="#33383D"/>
+      <rect x="142" y="63" width="17" height="17" fill="#33383D"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-in">
+    <svg class="loader-sq" viewBox="0 0 284 62"><use href="#hh-squares"/></svg>
+    <div class="loader-brand">HOME HELPER <b>RD</b></div>
+    <div class="loader-temp"><span id="loaderTemp">24</span>°C</div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+    <p class="loader-txt">Enfriando el ambiente…</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-in">
+    <a href="#inicio" class="brand" aria-label="HOME HELPER RD — Inicio">
+      <svg class="brand-sq" viewBox="0 0 284 62" aria-hidden="true"><use href="#hh-squares"/></svg>
+      <span class="brand-txt">HOME HELPER RD<small>SOLUCIONES PARA TU HOGAR</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-primary nav-cta">Solicitar servicio</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-panel" id="mobilePanel" aria-label="Menú móvil">
+  <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a>
+  <a href="#contacto" class="btn btn-primary">Solicitar servicio</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-chip reveal" style="--d:.05s"><span class="dot"></span> Climatización profesional · República Dominicana</span>
+      <h1 aria-label="El confort de tu hogar empieza con un buen aire.">
+        <span class="lm" style="--d:.15s"><span>El confort de tu hogar</span></span>
+        <span class="lm" style="--d:.28s"><span>empieza con un buen <em class="fx">aire.</em></span></span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:.4s">Instalación, mantenimiento y reparación de aires acondicionados. Servicio rápido y profesional.</p>
+      <div class="hero-btns reveal" style="--d:.5s">
+        <a href="#contacto" class="btn btn-primary">Solicitar servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#servicios" class="btn btn-ghost">Ver nuestros servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+      </div>
+      <ul class="hero-trust reveal" style="--d:.62s">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Técnicos certificados</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Garantía por escrito</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Servicio el mismo día</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:.3s">
+      <div class="hero-glow" data-parallax="0.06"></div>
+      <svg class="hero-lines" viewBox="0 0 900 620" aria-hidden="true">
+        <path d="M-20 420 C 160 375, 330 455, 505 400 S 780 320, 930 360"/>
+        <path d="M-20 490 C 185 440, 310 530, 480 478 S 770 390, 930 430"/>
+        <path d="M-20 560 C 200 515, 350 600, 530 545 S 810 460, 930 505"/>
+      </svg>
+      <div class="ac ac-hero">
+        <div class="ac-body">
+          <span class="ac-sheen"></span>
+          <span class="ac-brandtag">HOME HELPER</span>
+          <div class="ac-display"><b id="heroTemp">22</b><i>°C</i><u></u></div>
+          <div class="ac-grille"><i></i><i></i><i></i></div>
+          <div class="ac-vent" id="heroVent"><span class="ac-flap"></span></div>
+        </div>
+        <div class="ac-shadow"></div>
+      </div>
+      <div class="float-chip fc-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17"/></svg> Modo frío · 22°C</div>
+      <div class="float-chip fc-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2z"/></svg> Respuesta en menos de 24h</div>
+      <canvas class="hero-air" id="heroAir" aria-hidden="true"></canvas>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><i></i>Desliza</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Instalación profesional <b>❄</b> Mantenimiento preventivo <b>❄</b> Reparación garantizada <b>❄</b> Diagnóstico preciso <b>❄</b> Servicio en 24 horas <b>❄</b></span>
+    <span>Instalación profesional <b>❄</b> Mantenimiento preventivo <b>❄</b> Reparación garantizada <b>❄</b> Diagnóstico preciso <b>❄</b> Servicio en 24 horas <b>❄</b></span>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="services sec" id="servicios" data-gust>
+  <div class="wrap services-wrap">
+    <div class="services-gust" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="kicker">Nuestros servicios</span>
+        <h2 class="h2">Todo lo que tu aire <em class="fx">necesita.</em></h2>
+      </div>
+      <p class="lead reveal" style="--d:.15s;max-width:38ch">Una corriente de aire frío, un equipo a punto. Cubrimos el ciclo completo de tu climatización.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="service-card sc-1">
+        <span class="sc-num">01</span>
+        <div class="svc-icon"><span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9M12 3l-2.2 2.4M12 3l2.2 2.4M12 21l-2.2-2.4M12 21l2.2-2.4M4.2 7.5l3.1.5M4.2 16.5l3.1-.5M19.8 7.5l-3.1.5M19.8 16.5l-3.1-.5"/></svg>
+        </div>
+        <h3>Mantenimiento de Aires</h3>
+        <p>Limpieza, revisión y mantenimiento preventivo para mantener tu equipo funcionando correctamente y alargando su vida útil.</p>
+        <ul class="svc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Limpieza de serpentín</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Cambio de filtros</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Revisión de gas refrigerante</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Prueba de presiones</li>
+        </ul>
+        <a class="svc-link" href="#contacto" data-service="mantenimiento">Solicitar este servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service-card sc-2">
+        <span class="sc-num">02</span>
+        <div class="svc-icon"><span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.9L3 18l3 3 5.8-5.7a4.5 4.5 0 0 0 5.9-6L14.4 12l-2.4-2.4 2.7-3.3z"/></svg>
+        </div>
+        <h3>Reparación</h3>
+        <p>Diagnóstico y reparación de problemas en sistemas de aire acondicionado, con repuestos de calidad.</p>
+        <div class="svc-tags"><span>Fugas de gas</span><span>Tarjetas electrónicas</span><span>Compresores</span></div>
+        <a class="svc-link" href="#contacto" data-service="reparacion">Solicitar este servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service-card sc-3">
+        <span class="sc-num">03</span>
+        <div class="svc-icon"><span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5L12 4l9 7.5M5.5 9.8V20h13V9.8M9.5 20v-5.5h5V20"/></svg>
+        </div>
+        <h3>Instalación</h3>
+        <p>Instalación profesional de equipos de aire acondicionado para hogares y negocios, cuidando cada detalle.</p>
+        <div class="svc-tags"><span>Split</span><span>Ventana</span><span>Cassette</span><span>Inverter</span></div>
+        <a class="svc-link" href="#contacto" data-service="instalacion">Solicitar este servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service-card sc-4">
+        <span class="sc-num">04</span>
+        <div class="svc-icon"><span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2z"/></svg>
+        </div>
+        <h3>Revisión y Diagnóstico</h3>
+        <p>Detectamos problemas de funcionamiento y te recomendamos la mejor solución, con un diagnóstico claro antes de cualquier trabajo.</p>
+        <ul class="svc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Informe del estado del equipo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Presupuesto transparente</li>
+        </ul>
+        <a class="svc-link" href="#contacto" data-service="diagnostico">Solicitar este servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" data-gust>
+  <div class="wrap stats-row">
+    <div class="stat reveal"><b><span data-count="10">0</span><span class="c-accent">+</span></b><span>Años de experiencia</span></div>
+    <div class="stat reveal" style="--d:.1s"><b><span data-count="1500">0</span><span class="c-accent">+</span></b><span>Equipos atendidos</span></div>
+    <div class="stat reveal" style="--d:.2s"><b><span data-count="24">0</span><span class="c-accent">h</span></b><span>Tiempo de respuesta</span></div>
+    <div class="stat reveal" style="--d:.3s"><b><span data-count="90">0</span><span class="c-accent"> días</span></b><span>Garantía de servicio</span></div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="why sec" id="nosotros">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-media reveal-l reveal">
+        <div class="why-img"><img src="https://picsum.photos/seed/tecnico-aire-acondicionado/860/1040" alt="Técnico de HOME HELPER RD dando mantenimiento a un aire acondicionado" loading="lazy" id="whyImg"></div>
+        <div class="why-badge">
+          <span class="wb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V5l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+          <span><b>100% Garantizado</b><span>Cada trabajo, por escrito</span></span>
+        </div>
+      </div>
+      <div>
+        <span class="kicker reveal">¿Por qué HOME HELPER RD?</span>
+        <h2 class="h2 reveal" style="--d:.1s">La diferencia está<br>en los <em class="fx">detalles.</em></h2>
+        <div class="adv-list">
+          <div class="adv reveal" style="--d:.12s">
+            <span class="adv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1-3.6 4-5.4 7.5-5.4s6.5 1.8 7.5 5.4"/></svg></span>
+            <div><h3>Servicio profesional</h3><p>Técnicos capacitados, uniformados y con herramientas especializadas para cada equipo.</p></div>
+          </div>
+          <div class="adv reveal" style="--d:.22s">
+            <span class="adv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2.5"/></svg></span>
+            <div><h3>Atención rápida</h3><p>Visitas el mismo día y agenda flexible que se adapta a tu horario, no al revés.</p></div>
+          </div>
+          <div class="adv reveal" style="--d:.32s">
+            <span class="adv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V5l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+            <div><h3>Trabajo garantizado</h3><p>Respaldamos cada servicio con garantía por escrito. Tu tranquilidad es parte del trabajo.</p></div>
+          </div>
+          <div class="adv reveal" style="--d:.42s">
+            <span class="adv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9.5 21v-6h5v6M9 11h.01M15 11h.01"/></svg></span>
+            <div><h3>Hogares y negocios</h3><p>Desde apartamentos y casas hasta oficinas, locales y restaurantes. Soluciones a tu medida.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios -->
+    <div class="testi">
+      <div class="testi-head reveal">
+        <div><span class="kicker">Clientes satisfechos</span><h2 class="h2" style="margin-bottom:0">Lo que dicen de nosotros</h2></div>
+        <span class="testi-hint">Desliza →</span>
+      </div>
+      <div class="testi-row reveal" style="--d:.15s">
+        <article class="t-card">
+          <div class="t-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Mi aire no enfriaba nada y en la misma visita me lo dejaron como nuevo. Puntuales y muy limpios en el trabajo.”</p>
+          <div class="t-who"><img src="https://picsum.photos/seed/cliente-rosa-piantini/96/96" alt="Foto de Rosa M." loading="lazy"><span><b>Rosa M.</b><span>Piantini, Santo Domingo</span></span></div>
+        </article>
+        <article class="t-card">
+          <div class="t-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Instalaron dos splits en mi apartamento en tiempo récord y explicándome todo. Se nota el profesionalismo.”</p>
+          <div class="t-who"><img src="https://picsum.photos/seed/cliente-jose-naco/96/96" alt="Foto de José A." loading="lazy"><span><b>José A.</b><span>Naco, Santo Domingo</span></span></div>
+        </article>
+        <article class="t-card">
+          <div class="t-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Llevan el mantenimiento de los aires de mi restaurante. Siempre puntuales y con garantía. Totalmente recomendados.”</p>
+          <div class="t-who"><img src="https://picsum.photos/seed/cliente-carmen-santiago/96/96" alt="Foto de Carmen L." loading="lazy"><span><b>Carmen L.</b><span>Santiago de los Caballeros</span></span></div>
+        </article>
+        <article class="t-card">
+          <div class="t-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“El diagnóstico fue honesto y el precio justo. Me ahorraron comprar un equipo nuevo que no necesitaba.”</p>
+          <div class="t-who"><img src="https://picsum.photos/seed/cliente-luis-arroyo/96/96" alt="Foto de Luis P." loading="lazy"><span><b>Luis P.</b><span>Arroyo Hondo, Santo Domingo</span></span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COOL ZONE ============ -->
+<section class="cool" id="confort" data-gust>
+  <div class="cool-sticky" id="coolSticky">
+    <span class="kicker cool-kicker">Experiencia HOME HELPER</span>
+    <h2 class="cool-title" id="czTitle">
+      <span class="lm"><span>Respira tranquilidad.</span></span>
+      <span class="lm" style="--d:.14s"><span><em>Nosotros nos encargamos del resto.</em></span></span>
+    </h2>
+    <div class="cool-stage">
+      <div class="cz-read" aria-hidden="true">MODO FRÍO · VENTILADOR <b id="czFan">0%</b></div>
+      <div class="cz-mist" id="czMist" aria-hidden="true"></div>
+      <div class="ac ac-big">
+        <div class="ac-body">
+          <span class="ac-sheen"></span>
+          <span class="ac-brandtag">HOME HELPER · INVERTER</span>
+          <div class="ac-display"><b id="czTemp">26</b><i>°C</i><u></u></div>
+          <div class="ac-grille"><i></i><i></i><i></i><i></i></div>
+          <div class="ac-vent" id="czVent"><span class="ac-flap" id="czFlap"></span></div>
+        </div>
+        <div class="ac-shadow"></div>
+      </div>
+      <canvas class="cz-air" id="czAir" aria-hidden="true"></canvas>
+    </div>
+    <div class="cool-hint" id="czHint"><i></i> Sigue bajando · el equipo se enciende</div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="process sec" id="proceso">
+  <div class="wrap">
+    <div class="flow-in" aria-hidden="true"><span class="flow-line"></span></div>
+    <div class="sec-head" style="justify-content:center;text-align:center">
+      <div class="reveal">
+        <span class="kicker" style="justify-content:center">Cómo trabajamos</span>
+        <h2 class="h2">Del primer contacto<br>al <em class="fx">aire perfecto.</em></h2>
+      </div>
+    </div>
+    <div class="steps" id="stepsWrap">
+      <svg class="steps-path" viewBox="0 0 60 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path class="base" vector-effect="non-scaling-stroke" d="M30 0 C 48 110, 12 200, 30 320 C 48 440, 12 540, 30 660 C 48 780, 12 880, 30 1000"/>
+        <path class="flow" id="stepsFlow" vector-effect="non-scaling-stroke" pathLength="1" d="M30 0 C 48 110, 12 200, 30 320 C 48 440, 12 540, 30 660 C 48 780, 12 880, 30 1000"/>
+      </svg>
+      <div class="step">
+        <div class="step-body reveal-l reveal"><span class="step-tag">PASO UNO</span><h3>Contáctanos</h3><p>Escríbenos por WhatsApp o llámanos. Cuéntanos qué le pasa a tu equipo y coordinamos la visita.</p></div>
+        <div class="step-badge">1</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-body reveal-r reveal"><span class="step-tag">PASO DOS</span><h3>Evaluamos tu equipo</h3><p>Nuestro técnico inspecciona el aire, identifica el problema y te presenta un presupuesto claro.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-body reveal-l reveal"><span class="step-tag">PASO TRES</span><h3>Realizamos el servicio</h3><p>Ejecutamos el trabajo con herramientas profesionales, repuestos de calidad y área impecable.</p></div>
+        <div class="step-badge">3</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-body reveal-r reveal"><span class="step-tag">PASO CUATRO</span><h3>Disfruta de un aire funcionando correctamente</h3><p>Verificamos el funcionamiento junto a ti y te entregamos el equipo enfriando al máximo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta" data-gust>
+  <canvas class="cta-air" id="ctaAir" aria-hidden="true"></canvas>
+  <svg class="cta-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 120 C 240 70, 480 180, 720 120 S 1100 40, 1240 90"/>
+    <path d="M-20 300 C 260 250, 520 360, 760 300 S 1120 220, 1240 270"/>
+    <path d="M-20 430 C 280 390, 540 480, 780 430 S 1120 360, 1240 400"/>
+  </svg>
+  <div class="wrap">
+    <span class="kicker light reveal" style="justify-content:center">¿Hace calor en casa?</span>
+    <h2 class="reveal" style="--d:.1s">¿Tu aire no está enfriando como debería?</h2>
+    <p class="sub reveal" style="--d:.2s">Déjalo en manos de profesionales.</p>
+    <div class="reveal" style="--d:.3s"><a href="#contacto" class="btn btn-xl btn-cta">SOLICITAR SERVICIO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <p class="cta-note reveal" style="--d:.4s">Respuesta en menos de 24 horas · Gran Santo Domingo y Santiago</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contact sec" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="reveal-l reveal">
+      <span class="kicker">Contacto</span>
+      <h2 class="h2">Agenda tu servicio<br>hoy <em class="fx">mismo.</em></h2>
+      <p class="lead">Completa el formulario o escríbenos directo. Te respondemos rápido, como debe ser.</p>
+      <div class="c-info-list">
+        <a class="c-info" href="tel:+18093705413"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2.2 2A17 17 0 0 1 3 6.2 2 2 0 0 1 5 4z"/></svg></span><div><b>(809) 370-5413</b><span>Llámanos — Lun a Sáb</span></div></a>
+        <a class="c-info" href="https://wa.me/18093705413" target="_blank" rel="noopener"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1a15 15 0 0 1-6.5-5.7c-.6-1-.9-2-.7-2.8.1-.6.8-1.6 1.4-1.7h.9c.3 0 .6.1.8.7l.8 1.9c.1.2.1.5 0 .7l-.5.8c-.2.2-.2.4 0 .7a8.7 8.7 0 0 0 3.7 3.2c.3.1.5.1.7-.1l.8-.9c.2-.3.4-.4.7-.3l2 1c.5.2.6.5.6.8v.5z"/></svg></span><div><b>(809) 370-5413</b><span>WhatsApp — respuesta inmediata</span></div></a>
+        <div class="c-info"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2.5"/></svg></span><div><b>Lun – Sáb · 8:00 AM – 6:00 PM</b><span>Emergencias disponibles 24/7</span></div></div>
+        <div class="c-info"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><div><b>Gran Santo Domingo &amp; Santiago</b><span>Cobertura en todo el Distrito Nacional</span></div></div>
+      </div>
+      <figure class="c-map">
+        <img src="https://picsum.photos/seed/santo-domingo-malecon/720/420" alt="Zona de cobertura en Santo Domingo" loading="lazy">
+        <figcaption>❄ COBERTURA: GRAN SANTO DOMINGO</figcaption>
+      </figure>
+    </div>
+
+    <div class="form-card reveal-r reveal" id="formCard">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="fName">Nombre</label><input id="fName" name="nombre" type="text" placeholder="Tu nombre completo" required></div>
+          <div class="field"><label for="fPhone">Teléfono</label><input id="fPhone" name="telefono" type="tel" placeholder="(809) 000-0000" required></div>
+          <div class="field"><label for="fWa">WhatsApp</label><input id="fWa" name="whatsapp" type="tel" placeholder="(829) 000-0000"></div>
+          <div class="field"><label for="fService">Tipo de servicio</label>
+            <select id="fService" name="servicio" required>
+              <option value="mantenimiento">Mantenimiento de Aires</option>
+              <option value="reparacion">Reparación</option>
+              <option value="instalacion">Instalación</option>
+              <option value="diagnostico">Revisión y Diagnóstico</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="field full"><label for="fMsg">Mensaje</label><textarea id="fMsg" name="mensaje" placeholder="Cuéntanos qué necesita tu equipo…"></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Solicitar servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </form>
+      <div class="form-ok" aria-live="polite">
+        <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>¡Solicitud lista!</h3>
+        <p>Presiona el botón para enviarnos los datos por WhatsApp y coordinar tu visita.</p>
+        <a href="#" class="btn btn-wa" id="waSend" target="_blank" rel="noopener">Enviar por WhatsApp <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <!-- Logo completo en versión clara (vectorial) -->
+        <svg class="f-logo" viewBox="0 0 300 262" role="img" aria-label="HOME HELPER RD — Soluciones para tu hogar">
+          <g transform="translate(10,0)">
+            <rect x="216" y="18" width="22" height="42" fill="#E8F2F8"/>
+            <path d="M2 88 L140 4 L278 88" stroke="#E8F2F8" stroke-width="12" fill="none"/>
+            <rect x="121" y="42" width="17" height="17" fill="#E8F2F8"/>
+            <rect x="142" y="42" width="17" height="17" fill="#E8F2F8"/>
+            <rect x="121" y="63" width="17" height="17" fill="#E8F2F8"/>
+            <rect x="142" y="63" width="17" height="17" fill="#E8F2F8"/>
+          </g>
+          <use href="#hh-squares" x="8" y="104"/>
+          <text x="150" y="214" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="29" fill="#FFFFFF" letter-spacing=".5">HOME HELPER RD</text>
+          <rect x="8" y="238" width="28" height="3" fill="#4C94C0"/>
+          <text x="150" y="245" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="700" font-size="10.5" fill="#A8C6DC" letter-spacing="2.6">SOLUCIONES PARA TU HOGAR</text>
+          <rect x="264" y="238" width="28" height="3" fill="#CE403A"/>
+        </svg>
+        <!-- ¿Prefieres tu imagen original? Guarda el logo como "logo.png" en la misma carpeta
+             y reemplaza el <svg class="f-logo">…</svg> por:  <img src="logo.png" alt="HOME HELPER RD" style="width:230px"> -->
+        <p class="f-tag">Mantenimiento, reparación e instalación de aires acondicionados. Soluciones para tu hogar.</p>
+        <div class="f-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h2.5V4.8H14c-2.4 0-4 1.6-4 4V11H7.6v3.2H10V21h3.3v-6.8h2.5l.5-3.2h-3V9c0-.6.4-1 .7-1z"/></svg></a>
+          <a href="https://wa.me/18093705413" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Navegación</h4>
+        <ul><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#contacto">Contacto</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Servicios</h4>
+        <ul><li><a href="#servicios">Mantenimiento</a></li><li><a href="#servicios">Reparación</a></li><li><a href="#servicios">Instalación</a></li><li><a href="#servicios">Diagnóstico</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Contacto</h4>
+        <ul><li><a href="tel:+18093705413">(809) 370-5413</a></li><li><a href="https://wa.me/18093705413" target="_blank" rel="noopener">WhatsApp directo</a></li><li><a href="#contacto">Lun–Sáb · 8AM–6PM</a></li><li><a href="#contacto">Santo Domingo, RD</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bar">
+      <span>© <span id="year">2025</span> HOME HELPER RD. Todos los derechos reservados.</span>
+      <span>Hecho con <b>❄</b> en República Dominicana</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING / OVERLAYS -->
+<a class="wa-float" href="https://wa.me/18093705413?text=Hola%20HOME%20HELPER%20RD%2C%20necesito%20servicio%20para%20mi%20aire%20acondicionado." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <span class="wa-tip">¿Necesitas ayuda? Escríbenos</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+<div id="windLayer" aria-hidden="true"></div>
+<div id="vignette" aria-hidden="true"></div>
+<canvas id="frost" aria-hidden="true"></canvas>
+<div id="noise" aria-hidden="true"></div>
+
+<script>
+(function(){
+"use strict";
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = matchMedia('(max-width: 860px)').matches;
+const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+const DPR = Math.min(window.devicePixelRatio||1, 1.75);
+let scrollProg = 0, lastGust = 0;
+
+/* ---------- LOADER ---------- */
+const loader = document.getElementById('loader');
+function endLoader(){ loader.classList.add('done'); initReveals(); setTimeout(()=>loader.remove(), 900); }
+if(RM){ loader.classList.add('done'); setTimeout(()=>loader.remove(),50); initReveals(); }
+else{
+  const lt = document.getElementById('loaderTemp'), lb = document.getElementById('loaderBar');
+  const t0 = performance.now();
+  (function tick(t){
+    const p = clamp((t-t0)/950, 0, 1);
+    lt.textContent = Math.round(24 - 6*p);
+    lb.style.width = (p*100)+'%';
+    if(p<1) requestAnimationFrame(tick); else setTimeout(endLoader, 220);
+  })(t0);
+}
+
+/* ---------- HEADER / NAV ---------- */
+const header = document.getElementById('siteHeader');
+const navToggle = document.getElementById('navToggle');
+addEventListener('scroll', ()=>header.classList.toggle('scrolled', scrollY>24), {passive:true});
+navToggle.addEventListener('click', ()=>{
+  const open = document.body.classList.toggle('menu-open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.mobile-panel a').forEach(a=>a.addEventListener('click', ()=>document.body.classList.remove('menu-open')));
+
+/* ---------- REVEALS ---------- */
+function initReveals(){
+  const els = document.querySelectorAll('.reveal');
+  if(RM){ els.forEach(e=>e.classList.add('in')); return; }
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+  els.forEach(e=>io.observe(e));
+}
+
+/* ---------- WINDPASS STREAKS ---------- */
+const windLayer = document.getElementById('windLayer');
+function windpass(){
+  if(RM) return;
+  const now = performance.now();
+  if(now - lastGust < 2400) return;
+  lastGust = now;
+  const d = document.createElement('div');
+  d.className = 'windpass';
+  d.style.top = (15 + Math.random()*55) + '%';
+  windLayer.appendChild(d);
+  setTimeout(()=>d.remove(), 1500);
+}
+const gustIO = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ windpass(); gustIO.unobserve(e.target);} }), {threshold:.22});
+document.querySelectorAll('[data-gust]').forEach(el=>gustIO.observe(el));
+
+/* ---------- SERVICES GUST REVEAL ---------- */
+const servicesSec = document.querySelector('.services');
+new IntersectionObserver((es,io)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ servicesSec.classList.add('gusted'); windpass(); setTimeout(windpass, 350); io.disconnect(); } });
+},{threshold:.18}).observe(servicesSec);
+
+/* ---------- COUNTERS ---------- */
+const cntIO = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  const el = e.target, target = +el.dataset.count;
+  cntIO.unobserve(el);
+  if(RM){ el.textContent = target.toLocaleString('es-DO'); return; }
+  const t0 = performance.now();
+  (function step(t){
+    const p = clamp((t-t0)/1400,0,1), ease = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(target*ease).toLocaleString('es-DO');
+    if(p<1) requestAnimationFrame(step);
+  })(t0);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cntIO.observe(el));
+
+/* ---------- PARTICLE FIELDS ---------- */
+const fields = [];
+function makeField(canvas, kind, anchor, max, visibleSec){
+  const f = { cv:canvas, ctx:canvas.getContext('2d'), kind, anchor, max, parts:[], running:false, rate: kind==='frost'? 0 : 1, w:0, h:0, ex:0, ey:0 };
+  function resize(){
+    f.w = canvas.clientWidth; f.h = canvas.clientHeight;
+    canvas.width = f.w*DPR; canvas.height = f.h*DPR;
+    f.ctx.setTransform(DPR,0,0,DPR,0,0);
+    if(anchor){
+      const vr = anchor.getBoundingClientRect(), cr = canvas.getBoundingClientRect();
+      f.ex = vr.left - cr.left + vr.width/2;
+      f.ey = vr.top - cr.top + vr.height*.75;
+    }
+  }
+  f.resize = resize; resize();
+  if(visibleSec){
+    new IntersectionObserver(es=>es.forEach(e=>f.running = e.isIntersecting),{threshold:.02}).observe(visibleSec);
+  } else f.running = true;
+  addEventListener('resize', resize);
+  fields.push(f);
+  return f;
+}
+function spawn(f){
+  const R = Math.random;
+  let p = null;
+  if(f.kind==='vent'||f.kind==='cool'){
+    const spread = f.kind==='cool' ? .9 : .55;
+    p = { x:f.ex+(R()-.5)*f.w*.42, y:f.ey, life:0, max:110+R()*90,
+      vx:(R()-.5)*spread - (f.kind==='vent'? .35:0),
+      vy: f.kind==='cool' ? 1.1+R()*1.5 : .5+R()*.9,
+      r:1+R()*2.4, ph:R()*6.28, line: R()<.12 };
+  } else if(f.kind==='drift'){
+    p = { x:f.w+10, y:R()*f.h, life:0, max:300, vx:-(.5+R()*1.1), vy:(R()-.5)*.3, r:.8+R()*1.8, ph:R()*6.28, line:R()<.1 };
+  } else if(f.kind==='frost'){
+    p = { x:R()*f.w, y:-8, life:0, max:600, vx:-(.08+R()*.3), vy:.2+R()*.5, r:.9+R()*1.6, ph:R()*6.28, crystal:R()<.14 };
+  }
+  if(p) f.parts.push(p);
+}
+function stepField(f, dt){
+  const c = f.ctx; c.clearRect(0,0,f.w,f.h);
+  let want = 0;
+  if(f.kind==='vent') want = 2.2*f.rate*dt;
+  else if(f.kind==='cool') want = 3.4*f.rate*dt;
+  else if(f.kind==='drift') want = .9*dt;
+  else if(f.kind==='frost'){
+    const target = Math.round((isMobile?12:20) + scrollProg*(isMobile?12:26));
+    want = f.parts.length < target ? .8*dt : 0;
+  }
+  let acc = want;
+  while(acc>0 && f.parts.length<f.max){ if(Math.random()<Math.min(acc,1)) spawn(f); acc-=1; }
+  for(let i=f.parts.length-1;i>=0;i--){
+    const p = f.parts[i];
+    p.life += dt;
+    if(p.life>p.max || p.y>f.h+14 || p.x<-20){ f.parts.splice(i,1); continue; }
+    p.x += (p.vx + Math.sin(p.ph + p.life*.045)*.35)*dt;
+    p.y += p.vy*dt;
+    if(f.kind==='vent'){ p.vx -= .004*dt; p.vy += .006*dt; }
+    const lp = p.life/p.max, a = lp<.15 ? lp/.15 : (1-lp)/.85;
+    const alpha = clamp(a,0,1)*.85;
+    if(p.line){
+      c.strokeStyle = 'rgba(200,240,255,'+(alpha*.5)+')';
+      c.lineWidth = 1.2;
+      c.beginPath(); c.moveTo(p.x,p.y); c.lineTo(p.x-p.vx*7, p.y-p.vy*7); c.stroke();
+    } else if(p.crystal){
+      c.strokeStyle = 'rgba(225,247,255,'+alpha*.9+')';
+      c.lineWidth = .8;
+      const s = p.r*3;
+      c.beginPath();
+      for(let k=0;k<3;k++){ const an = k*Math.PI/3 + p.ph;
+        c.moveTo(p.x-Math.cos(an)*s, p.y-Math.sin(an)*s);
+        c.lineTo(p.x+Math.cos(an)*s, p.y+Math.sin(an)*s); }
+      c.stroke();
+    } else {
+      c.fillStyle = 'rgba(160,225,252,'+(alpha*.22)+')';
+      c.beginPath(); c.arc(p.x,p.y,p.r*2.6,0,6.28); c.fill();
+      c.fillStyle = 'rgba(240,252,255,'+alpha+')';
+      c.beginPath(); c.arc(p.x,p.y,p.r,0,6.28); c.fill();
+    }
+  }
+}
+const heroSec = document.getElementById('inicio');
+const coolSec = document.getElementById('confort');
+const ctaSec  = document.getElementById('cta');
+const heroField = makeField(document.getElementById('heroAir'),'vent',document.getElementById('heroVent'), isMobile?40:80, heroSec);
+const czField   = makeField(document.getElementById('czAir'),'cool',document.getElementById('czVent'), isMobile?60:110, coolSec);
+if(!RM){
+  makeField(document.getElementById('ctaAir'),'drift',null, isMobile?36:70, ctaSec);
+  makeField(document.getElementById('frost'),'frost',null, isMobile?26:50, null);
+}
+if(RM){ heroField.running = false; czField.running = false; }
+
+/* ---------- SCROLL-DRIVEN FX ---------- */
+const czTemp = document.getElementById('czTemp'), czFan = document.getElementById('czFan'),
+      czFlap = document.getElementById('czFlap'), czMist = document.getElementById('czMist'),
+      czTitle = document.getElementById('czTitle'), czHint = document.getElementById('czHint'),
+      coolSticky = document.getElementById('coolSticky');
+const stepsFlow = document.getElementById('stepsFlow'), stepsWrap = document.getElementById('stepsWrap');
+const vignette = document.getElementById('vignette');
+const whyImg = document.getElementById('whyImg');
+const heroGlow = document.querySelector('.hero-glow');
+const heroTempEl = document.getElementById('heroTemp');
+let heroBlink = 22;
+setInterval(()=>{ if(RM) return; heroBlink = heroBlink===22?21:22; heroTempEl.textContent = heroBlink; }, 3800);
+
+let czState = -1;
+function scrollFX(){
+  const vh = innerHeight;
+  const doc = document.documentElement;
+  scrollProg = clamp(scrollY / Math.max(1, doc.scrollHeight - vh), 0, 1);
+  vignette.style.opacity = (.32 + scrollProg*.45).toFixed(2);
+
+  if(!RM){
+    if(whyImg){ const r = whyImg.getBoundingClientRect();
+      if(r.bottom>0 && r.top<vh){ const off = (r.top + r.height/2 - vh/2)*.07;
+        whyImg.style.transform = 'translateY('+off.toFixed(1)+'px) scale(1.08)'; } }
+    if(heroGlow){ heroGlow.style.transform = 'translateY('+(scrollY*.12)+'px)'; }
+  }
+  const cr = coolSec.getBoundingClientRect();
+  const total = cr.height - vh;
+  const p = clamp(-cr.top / Math.max(1,total), 0, 1);
+  if(cr.top < vh && cr.bottom > 0){
+    czTemp.textContent = Math.round(26 - 8*p);
+    czFan.textContent = Math.round(p*100)+'%';
+    if(!RM) czFlap.style.transform = 'rotateX('+(12 + 32*p)+'deg)';
+    czMist.style.opacity = (p*.85).toFixed(2);
+    czField.rate = p;
+    czHint.style.opacity = clamp(1-p*5,0,1);
+    const on = p > .32 ? 1 : 0;
+    if(on !== czState){
+      czState = on;
+      czTitle.querySelectorAll('.lm').forEach(l=>l.classList.toggle('in', !!on));
+      coolSticky.classList.toggle('on', !!on);
+    }
+  }
+  if(stepsWrap){
+    const r = stepsWrap.getBoundingClientRect();
+    const sp = clamp((vh*.72 - r.top) / Math.max(1, r.height*.9), 0, 1);
+    stepsFlow.style.strokeDasharray = Math.max(.001,sp).toFixed(3)+' 1';
+  }
+}
+
+/* ---------- MAIN LOOP ---------- */
+let last = performance.now();
+function loop(t){
+  const dt = Math.min(34, t-last)/16.7; last = t;
+  for(const f of fields) if(f.running) stepField(f, dt);
+  scrollFX();
+  requestAnimationFrame(loop);
+}
+if(RM){ scrollFX(); } else { requestAnimationFrame(loop); }
+
+/* ---------- SERVICE LINKS → FORM ---------- */
+document.querySelectorAll('.svc-link').forEach(a=>a.addEventListener('click', ()=>{
+  const sel = document.getElementById('fService');
+  if(sel && a.dataset.service) sel.value = a.dataset.service;
+}));
+
+/* ---------- FORM ---------- */
+const form = document.getElementById('contactForm');
+const formCard = document.getElementById('formCard');
+const svcLabels = {mantenimiento:'Mantenimiento de Aires', reparacion:'Reparación', instalacion:'Instalación', diagnostico:'Revisión y Diagnóstico', otro:'Otro servicio'};
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const nombre = form.nombre.value.trim(), tel = form.telefono.value.trim();
+  if(!nombre || !tel){ (!nombre?form.nombre:form.telefono).focus(); return; }
+  const svc = svcLabels[form.servicio.value] || 'un servicio';
+  const msg = `Hola HOME HELPER RD ❄\nQuisiera solicitar: *${svc}*\n\n👤 Nombre: ${nombre}\n📞 Teléfono: ${tel}\n💬 WhatsApp: ${form.whatsapp.value.trim()||'—'}\n📝 Mensaje: ${form.mensaje.value.trim()||'—'}`;
+  document.getElementById('waSend').href = 'https://wa.me/18093705413?text=' + encodeURIComponent(msg);
+  formCard.classList.add('sent');
+  formCard.scrollIntoView({behavior: RM?'auto':'smooth', block:'center'});
+});
+
+/* ---------- YEAR ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- HOME HELPER RD - EFECTO DE AIRE FRÍO -->
+
+<section class="hhrd-cooling-section">
+
+    <div class="hhrd-air-animation">
+        <div class="hhrd-air hhrd-air-1">❄</div>
+        <div class="hhrd-air hhrd-air-2">❄</div>
+        <div class="hhrd-air hhrd-air-3">❄</div>
+        <div class="hhrd-air hhrd-air-4">❄</div>
+        <div class="hhrd-air hhrd-air-5">❄</div>
+    </div>
+
+    <div class="hhrd-cooling-content">
+
+        <span class="hhrd-badge">❄ SERVICIO PROFESIONAL</span>
+
+        <h2>
+            Siente la diferencia
+            <span>del aire bien cuidado.</span>
+        </h2>
+
+        <p>
+            En Home Helper RD mantenemos tu sistema de aire
+            funcionando al máximo para que disfrutes de un
+            ambiente fresco, limpio y confortable.
+        </p>
+
+        <a
+            class="hhrd-whatsapp"
+            href="https://wa.me/18093705413"
+            target="_blank">
+            Solicitar servicio por WhatsApp
+        </a>
+
+    </div>
+
+    <div class="hhrd-ac">
+
+        <div class="hhrd-ac-top"></div>
+
+        <div class="hhrd-ac-body">
+
+            <div class="hhrd-ac-display">
+                18°
+            </div>
+
+            <div class="hhrd-ac-light"></div>
+
+        </div>
+
+        <div class="hhrd-air-flow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* HOME HELPER RD */
+
+.hhrd-cooling-section {
+    position: relative;
+    min-height: 850px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(100,190,255,.18), transparent 45%),
+        linear-gradient(180deg, #071522, #03101b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 25px;
+    color: white;
+    isolation: isolate;
+}
+
+.hhrd-cooling-content {
+    position: relative;
+    z-index: 5;
+    max-width: 650px;
+    text-align: center;
+}
+
+.hhrd-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50px;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.hhrd-cooling-content h2 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: .95;
+    margin: 25px 0;
+}
+
+.hhrd-cooling-content h2 span {
+    display: block;
+    background: linear-gradient(90deg,#fff,#8ddcff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hhrd-cooling-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #c9d9e5;
+    max-width: 600px;
+    margin: auto auto 30px;
+}
+
+.hhrd-whatsapp {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 50px;
+    background: #19c763;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 10px 35px rgba(25,199,99,.3);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.hhrd-whatsapp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(25,199,99,.5);
+}
+
+/* AIRE ACONDICIONADO */
+
+.hhrd-ac {
+    position: absolute;
+    right: 8%;
+    bottom: 90px;
+    width: 300px;
+    height: 170px;
+    z-index: 3;
+    transform: translateY(120px);
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.hhrd-cooling-section.hhrd-visible .hhrd-ac {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hhrd-ac-top {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 230px;
+    height: 18px;
+    border-radius: 20px 20px 0 0;
+    background: #e9f4fa;
+}
+
+.hhrd-ac-body {
+    position: absolute;
+    top: 12px;
+    width: 300px;
+    height: 125px;
+    border-radius: 15px;
+    background: linear-gradient(180deg,#ffffff,#b9d5e3);
+    box-shadow: 0 25px 70px rgba(70,200,255,.25);
+}
+
+.hhrd-ac-display {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background: #071522;
+    color: #7ce5ff;
+    font-size: 14px;
+}
+
+.hhrd-ac-light {
+    position: absolute;
+    right: 30px;
+    bottom: 22px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #65d9ff;
+    box-shadow: 0 0 15px #65d9ff;
+}
+
+/* FLUJO DE AIRE */
+
+.hhrd-air-flow {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hhrd-air-flow span {
+    width: 3px;
+    height: 80px;
+    border-radius: 10px;
+    background: linear-gradient(transparent,#8ceaff,transparent);
+    animation: hhrdWind 1.8s infinite ease-in-out;
+}
+
+.hhrd-air-flow span:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.hhrd-air-flow span:nth-child(3) {
+    animation-delay: .8s;
+}
+
+@keyframes hhrdWind {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-15px) scaleY(.4);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(20px) scaleY(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(60px) scaleY(.5);
+    }
+
+}
+
+/* COPOS */
+
+.hhrd-air {
+    position: absolute;
+    color: #9eeaff;
+    font-size: 30px;
+    opacity: 0;
+    animation: hhrdSnow 5s infinite linear;
+}
+
+.hhrd-air-1 { left: 15%; animation-delay: 0s; }
+.hhrd-air-2 { left: 35%; animation-delay: 1s; }
+.hhrd-air-3 { left: 55%; animation-delay: 2s; }
+.hhrd-air-4 { left: 75%; animation-delay: 3s; }
+.hhrd-air-5 { left: 90%; animation-delay: 4s; }
+
+@keyframes hhrdSnow {
+
+    0% {
+        transform: translateY(100px) rotate(0deg);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(-750px) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .hhrd-cooling-section {
+        min-height: 900px;
+    }
+
+    .hhrd-cooling-content h2 {
+        font-size: 48px;
+    }
+
+    .hhrd-cooling-content p {
+        font-size: 16px;
+    }
+
+    .hhrd-ac {
+        right: 50%;
+        transform: translate(50%,120px);
+        bottom: 70px;
+    }
+
+    .hhrd-cooling-section.hhrd-visible .hhrd-ac {
+        transform: translate(50%,0);
+    }
+
+}
+
+</style>
+
+<script>
+
+const hhrdCooling = document.querySelector('.hhrd-cooling-section');
+
+if (hhrdCooling) {
+
+    const hhrdObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('hhrd-visible');
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    hhrdObserver.observe(hhrdCooling);
+
+}
+
+</script>
+</body>
+</html>
